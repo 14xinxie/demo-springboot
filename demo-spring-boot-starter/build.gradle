@@ -1,0 +1,9 @@
+description='demo-spring-boot-starter'
+
+dependencies {
+    api project(":demo-spring-boot-autoconfigure")
+}
+
+test {
+    useJUnitPlatform()
+}

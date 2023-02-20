@@ -1,0 +1,3 @@
+rootProject.name = 'demo-springboot'
+include 'demo-spring-boot-starter'
+include 'demo-spring-boot-autoconfigure'

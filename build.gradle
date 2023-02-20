@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+allprojects {
+    group 'com.webank.springboot'
+    version '1.2-SNAPSHOT'
+}
+subprojects {
+    // 使用 java-library 插件，才可以使用 api 语法依赖其他包
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.24'
+        // gradle 5.0以上版本注解处理不再compile classpth，需要增加 annotation processor path
+        annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    publishing {
+        publications {
+            bootDemo(MavenPublication) {
+                from components.java
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+}
