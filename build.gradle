@@ -6,7 +6,7 @@ buildscript {
 }
 allprojects {
     group 'com.webank.springboot'
-    version '1.2-SNAPSHOT'
+    version '1.0-SNAPSHOT'
 }
 subprojects {
     // 使用 java-library 插件，才可以使用 api 语法依赖其他包
