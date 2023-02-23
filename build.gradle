@@ -17,18 +17,20 @@ subprojects {
         // gradle 5.0以上版本注解处理不再compile classpth，需要增加 annotation processor path
         annotationProcessor 'org.projectlombok:lombok:1.18.24'
     }
-
+    // 配置依赖包的仓库，优先从本地仓库找依赖包
     repositories {
         mavenLocal()
         mavenCentral()
     }
 
+    // 发布jar包到Maven仓库
     publishing {
         publications {
             bootDemo(MavenPublication) {
                 from components.java
             }
         }
+        // 配置本地仓库为发布的目标仓库
         repositories {
             mavenLocal()
         }
